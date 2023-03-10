@@ -1,4 +1,4 @@
-# LeonardoCosta-Django
+ # Personal Site of Leonardo Costa
  ## Personal site made with Django.py, talking about myself and my skills.
     Working in progress...
     
