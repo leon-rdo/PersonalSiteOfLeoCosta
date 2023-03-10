@@ -1,0 +1,197 @@
+body {
+  height: 100vh;
+  background: radial-gradient(
+    circle,
+    rgba(9, 9, 121, 1) 0%,
+    rgb(1, 0, 15) 100%
+  );
+}
+
+#MainPic {
+  width: 25rem;
+  border-radius: 16rem;
+}
+.mouseHashtag {
+  display: none;
+}
+.anchor-link {
+  text-decoration: none;
+  opacity: 0;
+  transition: all 1s;
+}
+.anchor-link:hover{
+  content: "#";
+  opacity: 0.8;
+  color: white;
+  font-weight: 600;
+}
+.anchor-link::after {
+  content: "#";
+  opacity: 1;
+}
+.formationLogo {
+  width: 40px;
+  height: auto;
+  margin-left: 10px;
+}
+.formation-text {
+  font-size: 2rem;
+  font-weight: 200;
+}
+.carousel-inner .carousel-item img {
+  object-fit: contain;
+}
+.card-achievements-img {
+  object-fit: contain;
+}
+footer {
+  margin-top: 2rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+  padding-bottom: 2rem;
+}
+footer a {
+  color: white !important;
+}
+
+.contato {
+  margin-left: 3.5vw;
+}
+
+/*X-Small devices (575px and down)*/
+@media (max-width: 576px) {
+  main {
+    padding: 4vw;
+  }
+  .RedeSocialLogo {
+    width: 9vw;
+  }
+  .navbar-brand {
+    width: 30vw;
+  }
+  .card-achievements {
+    margin: 6vw;
+  }
+}
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+  main {
+    padding: 5vw;
+  }
+  .RedeSocialLogo {
+    width: 8vw;
+  }
+  .navbar-brand {
+    width: 25vw;
+  }
+  .card-achievements {
+    margin: 4vw;
+    max-width: 500px;
+  }
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+  .RedeSocialLogo {
+    width: 6vw;
+  }
+  .navbar-brand {
+    width: 20vw;
+  }
+  .card-achievements {
+    height: 64.5vw;
+    min-width: 260px;
+  }
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+  .RedeSocialLogo {
+    width: 5vw;
+  }
+  .navbar-brand {
+    width: 15vw;
+  }
+  .card-achievements {
+    height: 55vw;
+  }
+}
+
+/*X-Large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+  .RedeSocialLogo {
+    width: 4vw;
+  }
+  .navbar-brand {
+    width: 12vw;
+  }
+  .card-achievements {
+    height: 45vw;
+    min-width: 330px;
+  }
+}
+
+/*XX-Large devices (larger desktops, 1400px and up)*/
+@media (min-width: 1400px) {
+  .RedeSocialLogo {
+    width: 3vw;
+  }
+  .navbar-brand {
+    width: 10vw;
+  }
+  .card-achievements {
+    height: 39vw;
+    min-width: 400px;
+  }
+}
+
+/* Achievements */
+.container-Image {
+  width: 100%;
+}
+.mainPic {
+  object-fit: contain;
+}
+.col-figure {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+}
+@media screen and (min-width: 992px) {
+  #mainPic {
+    height: 500px;
+  }
+}
+.mute-link {
+  color: inherit;
+}
+#gotTop {
+  a{
+    img{width: 40px;}
+  }
+}
+.arrow {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.arrow__icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  margin-top: -25px;
+  margin-left: -25px;
+  transform-style: preserve-3d;
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}

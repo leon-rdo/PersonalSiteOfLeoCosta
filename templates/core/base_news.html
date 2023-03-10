@@ -1,0 +1,132 @@
+{% extends "core/base.html" %}
+
+{% block title %}{% endblock %}
+
+{% block meta %}{% endblock %}
+
+{% block scripts %}{% endblock %}
+
+{% block content %}
+<div class="container-xxl text-white p-4">
+    <article>
+      <section class="Achievement" id="DesafioINSERN22">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-12 col-md-10 mt-3">
+            <h1 class="display-4 text-center">
+              <strong
+                >{% block headline %} {% endblock %}</strong
+              >
+            </h1>
+            <p class="fs-4 text-center">
+              <em
+                >{% block lead %}{% endblock %}</em
+              ><br />
+            </p>
+          </div>
+          <div
+            class="col-12 col-md-10 col-figure d-flex justify-content-center mb-3"
+          >
+            <div class="mb-1">
+              <figure class="figure" id="mainPic">
+                <div class="container-Image">
+                    {% block main_pic }
+                  
+                    {% endblock %}
+                </div>
+                <figcaption class="figure-caption text-center text-light">
+                  <em
+                    >Equipe SERTECH da UNAMA: Denis, Michel, Leonardo e
+                    Nandara com o cheque gigante de R$ 15.000,00.</em
+                  >
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="col-12 col-md-10 fs-5">
+            <p>
+              A equipe liderada pelo Professor Rodrigo Marques, e formada
+              por Denis Cravo, <strong>Leonardo Costa</strong>, Michel
+              Ribeiro e Nandara Pinheiro representou a Universidade da
+              Amazônia - UNAMA no Desafio INSERN 2022. O desafio consistiu,
+              segundo o site do evento, em achar uma:
+            </p>
+            <figure class="text-end">
+              <blockquote class="blockquote fs-5">
+                <q class="lead">
+                  Solução que indique e mapeie atividades suspeitas de ações
+                  criminosas para que a Segurança Pública e instituições
+                  financeiras possam traçar estratégias preventivas de
+                  combate contra organizações criminosas.
+                </q>
+              </blockquote>
+              <figcaption class="blockquote-footer">
+                Descrição do desafio pela
+                <cite
+                  ><a
+                    class="mute-link"
+                    href="https://www.insern.com.br/desafio2022#desafio"
+                    >INSERN
+                  </a>
+                </cite>
+              </figcaption>
+            </figure>
+
+            <p>
+              Com <strong>Leonardo</strong> sendo o apresentador do
+              <i>pitch</i> que ocorreu na
+              <a
+                class="mute-link"
+                href="http://www.feiraparanegocios.com.br/index.html"
+                >Feira Pará Negócios</a
+              >
+              - 9ª Edição (em
+              <time datetime="2022-12-04">4 de dezembro de 2022</time>), o
+              grupo SERTECH ficou à frente de outras equipes de instituições
+              notáveis, como o
+              <a
+                target="_blank"
+                class="mute-link"
+                href="https://www.ifpa.edu.br"
+                >Instituto Federal do Pará - IFPA</a
+              >
+              <i>(2º Lugar)</i>, a
+              <a
+                target="_blank"
+                class="mute-link"
+                href="https://portal.ufpa.br"
+                >Universidade Federal do Pará - UFPA</a
+              >
+              <i>(3º Lugar)</i> e o
+              <a
+                target="_blank"
+                class="mute-link"
+                href="https://www.cesupa.br/"
+                >Centro Universitário do Estado do Pará - CESUPA</a
+              >.
+            </p>
+            <figure class="text-center mt-5">
+              <blockquote class="blockquote fs-5">
+                <q>
+                  Esta conquista traz visibilidade ao nosso trabalho como
+                  desenvolvedores, minha equipe ficou muito alegre com a
+                  vitória. Foi uma honra trabalhar com o Denis, o Michel e a
+                  Nandara, além de lidar com a grande responsabilidade de
+                  estar diante dos jurados para vender nossa ideia, acredito
+                  que fizemos um bom trabalho ao longo do desafio.
+                </q>
+              </blockquote>
+              <figcaption class="blockquote-footer">
+                <cite>Leonardo Costa</cite> sobre o desafio.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+    </article>
+    <aside>
+        {% block aside %}{% endblock %}
+    </aside>
+  </div>
+{% endblock %}
+
+{% block more_script %}{% endblock %}

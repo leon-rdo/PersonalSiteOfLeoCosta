@@ -1,0 +1,192 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}Leonardo · Home{% endblock %}
+
+{% block meta %}
+  <meta property="og:title" content="Site de Leonardo Costa"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:description" content="Site pessoal sobre a vida e carreira de Leonardo Costa."/>
+  <meta property="og:image" content="https://i.pinimg.com/564x/b6/40/ed/b640edcf17dd01ec0a5927c6631ed5e5.jpg"/>
+  <meta property="og:url" content="https://leon-rdo.github.io/LeonardoCosta/"/>
+  <meta property="og:site_name" content="Leonardo Costa"/>
+  <meta name="twitter:title" content="Site de Leonardo Costa">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://leon-rdo.github.io/LeonardoCosta/">
+  <meta name="twitter:description" content="Site pessoal sobre a vida e carreira de Leonardo Costa.">
+  <meta name="twitter:image"content="https://i.pinimg.com/564x/b6/40/ed/b640edcf17dd01ec0a5927c6631ed5e5.jpg">
+{% endblock %}
+
+{% block scripts %}
+  <script src="{% static 'core/scripts/Achievements.js' %}" defer></script>
+  <script src="{% static 'core/scripts/translate.js' %}" defer></script>
+{% endblock %}
+
+{% block content %}
+  <p class="text-secondary text-center mt-1" id="tranlationMessage"><small></small></p>
+  <div class="container-xxl">
+    <div class="row justify-content-center align-items-start">
+      <div class="col-12 col-md-6">
+        <figure>
+          {% for main_pic in main_pics %}
+            <img
+              src="{{ main_pic.picture.url }}"
+              alt="{{ main_pic.alt }}"
+            
+              class="figure-img img-fluid mx-auto d-block mt-2"
+              id="MainPic"
+              data-tilt data-tilt-scale="1.1"
+            />
+          {% endfor %}
+          <figcaption id="test" class="figure-caption text-center text-light">
+            Leonardo Costa
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="row justify-content-center align-items-center g-2">
+      <div class="col-12 col-md-10 d-flex justify-content-center">
+        <div class="Box-RedesSociais btn-group" role="group">
+          {% for social_media_btn in social_media_btns %}
+            <a
+              href="{{ social_media_btn.link }}"
+              class="modelo-btn btn btn-outline-secondary"
+              target="_blank"
+            >
+            <img class="RedeSocialLogo" src="{{ social_media_btn.icon.url }}" alt="Ícone de {{ social_media_btn.name }}" />
+            </a>
+          {% endfor %}
+        </div>
+          
+      </div>
+    </div>
+    
+    
+    <section id="Formation">
+      <div class="row justify-content-center align-items-center g-2 mt-3">
+          <h1 class="display-3 text-white mb-3" id="formationTitle">Formação
+            <a class="anchor-link" href="#Formation" aria-label="Link to this section: Formation"></a>
+          </h1>
+          <div class="formation-box">
+            {% for formation in formations %}
+              <div class="d-flex">
+                <p class="text-white formation-text">{{ formation.institute }} - {{ formation.course }} ({{ formation.start_year }} - {{ formation.end_year }})</p>
+                <img class="formationLogo" src="{{ formation.logo.url }}" alt="Logo de {{ formation.institute }}">
+              </div>
+            {% endfor %}
+          </div>
+      </div>
+    </section>
+    
+    <section id="Certificates">
+      <div class="row justify-content-center align-items-center g-2 mt-3">
+        <h1 class="display-3 text-white mb-3" id="certificatesTitle">Certificados
+          <a class="anchor-link" href="#Certificates" aria-label="Link to this section: Certificates"></a>
+        </h1>
+        <div class="col-12 mb-5">
+          <div id="carousel-certificates" class="carousel slide" data-bs-ride="true">
+            <div class="carousel-indicators"></div> 
+            <div class="carousel-inner"></div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel-certificates" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel-certificates" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div> 
+        </div>
+
+      </div>
+    </section>
+
+  <!--
+    <section id="Achievements">
+      <div class="row justify-content-center align-items-center">
+        <h1 class="display-3 text-white mb-3" id="achievementsTitle">Conquistas
+          <a class="anchor-link" href="#Achievements" aria-label="Link to this section: Achievements"></a>
+        </h1>
+        <div class="col-12 mb-5">
+          <div class="cards-row row row-cols-1 row-cols-md-2 row-cols-xl-3 justify-content-center g-2 p-1">
+            
+          </div>
+          <div class="modelos">
+            <div class="card card-achievements text-white bg-dark modelo-card">
+              <div class="ratio ratio-4x3">
+                <img class="card-img-top card-achievements-img" src="" alt="">
+              </div>
+              <div class="card-body">
+                <div class="d-flex align-items-center">
+                  <h5 class="card-title"></h5>
+                  <span class="spinner-border spinner-border-md ms-2" role="status" aria-hidden="true"></span>
+                </div>
+                <p class="card-text"></p>
+                <a class="btn btn-light btn-ach" id="seeMore" href="">Veja </a>
+              </div>
+              <div class="card-footer"><small></small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  -->
+
+  </div>
+{% endblock %}
+{% block more_script %}
+  <script>
+    let certificatesJSON = [
+      {% for certificate in certificates %}
+        { title: '{{ certificate.title }}', picture: '{{ certificate.picture.url }}' },
+      {% endfor %}
+    ];
+    
+    let certificatesArea = document.querySelector('.carousel-inner');
+    let certificatesBtn = document.querySelector('.carousel-indicators');
+
+    for (let i = 0; i < certificatesJSON.length; i++) {
+        let i1 = i+1
+
+        let itemBtnSlide = document.createElement('button');
+        let itemCertificates = document.createElement('div');
+        let imageCertificates = document.createElement('img');
+
+        if (i == 0) {
+            imageCertificates.src = certificatesJSON[i].picture;
+            imageCertificates.alt = 'Certificado de ' + certificatesJSON[i].title;
+            imageCertificates.classList.add('d-block');
+            imageCertificates.classList.add('w-100');
+            itemCertificates.classList.add('carousel-item');
+            itemCertificates.classList.add('ratio');
+            itemCertificates.classList.add('ratio-16x9');
+            itemCertificates.classList.add('active');
+
+            itemBtnSlide.setAttribute('type', 'button');
+            itemBtnSlide.setAttribute('data-bs-target', '#carouselExampleIndicators');
+            itemBtnSlide.setAttribute('data-bs-slide-to', i);
+            itemBtnSlide.setAttribute('aria-current', 'false');
+            itemBtnSlide.setAttribute('aria-label', 'Slide '+i1);
+            itemBtnSlide.classList.add('active');
+        } else {
+            imageCertificates.src = certificatesJSON[i].picture;
+            imageCertificates.alt = 'Certificado de ' + certificatesJSON[i].title;
+            imageCertificates.classList.add('d-block');
+            imageCertificates.classList.add('w-100');
+            itemCertificates.classList.add('carousel-item');
+            itemCertificates.classList.add('ratio');
+            itemCertificates.classList.add('ratio-16x9');
+
+            itemBtnSlide.setAttribute('type', 'button');
+            itemBtnSlide.setAttribute('data-bs-target', '#carouselExampleIndicators');
+            itemBtnSlide.setAttribute('data-bs-slide-to', i);
+            itemBtnSlide.setAttribute('aria-current', 'true');
+            itemBtnSlide.setAttribute('aria-label', 'Slide '+i1);   
+        }
+        
+        itemCertificates.append(imageCertificates);
+        certificatesArea.append(itemCertificates);
+        certificatesBtn.append(itemBtnSlide);
+      }
+  </script>
+{% endblock %}

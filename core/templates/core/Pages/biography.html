@@ -1,0 +1,31 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}Biografia{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <section id="Bio">
+            <div class="row justify-content-between g-5 mt-3">
+                <div class="col-12 col-md-7">
+                    <h1 class="display-3 text-white mb-3" id="bioTitle">Biografia
+                        <a class="anchor-link" href="#Bio" aria-label="Link to this section: Biografia"></a>
+                    </h1>
+                    <p class="text-white text-bio" id="bioFirstP">Nascido em <em>São Gonçalo - Rio de Janeiro</em>, na sexta-feira do dia 16 de maio de 2003, <em>Leonardo Matheus de Abreu Costa</em>, é estudante de <strong>Análise e Desenvolvimento de Sistemas</strong> na <em>Universidade da Amazônia - UNAMA</em>.</p>
+                    <p class="text-white text-bio" id="bioSecondP">Aos 6 anos de idade mudou-se para <em>Belém do Pará</em>, onde reside até os dias presentes. Leonardo, atualmente, estagia na <strong>Ser Educacional</strong>, como <strong>desenvolvedor front-end</strong>.</p>
+                </div>
+                <div class="col-12 col-md-5">
+                    <figure>
+                        <div id="leokid">
+                            {% for bio_picture in bio_pictures %}
+                                <img src="{{ bio_picture.picture.url }}" alt="{{ bio_picture.picture.alt }}" data-tilt>
+                            {% endfor %}
+
+                        </div>  
+                        <figcaption id="leokidCap" class="figure-caption text-center text-light">Leonardo com 5 anos de idade.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}
